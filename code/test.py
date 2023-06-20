@@ -30,7 +30,7 @@ def main(opt):
     )
 
     model = V2AModel(opt)
-    checkpoint = sorted(glob.glob("checkpoints/*.ckpt"))[-1]
+    checkpoint = sorted(glob.glob("/content/vid2avatar/data/parkinglot/checkpoints/*.ckpt"))[-1]
     testset = create_dataset(opt.dataset.metainfo, opt.dataset.test)
 
     trainer.test(model, testset, ckpt_path=checkpoint)
